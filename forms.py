@@ -25,6 +25,7 @@ class ClubForm(FlaskForm):
     description = TextAreaField('Club Description', validators=[InputRequired(), Length(max=200)])
     spaces_available = IntegerField('Spaces available', validators=[InputRequired()])
 
+    # seleziona sopra un ciclo in g-sheet
     tipo_persona = SelectField('Che tipo di persona?', 
                              choices=[index[1] for index in data], 
                              validators=[InputRequired()])
