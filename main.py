@@ -36,9 +36,11 @@ def home():
         sh = sa.open("opensheet test")
         wks = sh.worksheet("Test Update")
        # update the value of the sheet
-        wks.update('B5', 
-                   [[form.name.data]]
-                         )
+        value=[form.name.data]
+      # aggiorna il dato
+        """ wks.update('B5', [[form.name.data]]) """
+      #aggiunge alla riga sottostante
+        wks.append_row(value)
         # redirect to the list clubs page
         return redirect(url_for('clubs'))
     # no form submitted (you just entered the page) - so render the form:
